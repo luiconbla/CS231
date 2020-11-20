@@ -1,0 +1,16 @@
+
+from google.colab import drive
+
+drive.mount('/content/drive', force_remount=True)
+
+# enter the path in your Drive to assignment1
+# e.g. 'cs231n/assignments/assignment1/'
+FOLDERNAME = None
+
+assert FOLDERNAME is not None, "[!] Enter the foldername."
+
+%cd drive/My\ Drive
+%cd $FOLDERNAME
+!sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended
+!pip install PyPDF2
+!bash collectSubmission.sh
